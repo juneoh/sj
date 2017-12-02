@@ -8,15 +8,52 @@
 
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
-
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.min.css" />
     <link rel="stylesheet" href="{{ site.baseurl }}/css/style.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
-  <body>
+  <body id="page-{{ page.id }}">
 
-    {{ content }}
+    <div id="navbar">
+      <nav>
+        <div class="nav-wrapper">
+          <a href="{{ site.baseurl }}/" class="brand-logo">사회복지법인 박애원</a>
+          <ul class="right">
+            <li>
+              <a href="#" data-activates="menu"><i class="material-icons">menu</i></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
+    <ul id="menu" class="side-nav">
+      <li><a href="{{ site.baseurl }}/" class="waves-effect">재단 소개</a></li>
+      <li><a href="{{ site.baseurl }}/info" class="waves-effect">연혁 및 현황</a></li>
+      <li><a href="{{ site.baseurl }}/notice" class="waves-effect">공지사항</a></li>
+      <li><a href="{{ site.baseurl }}/contact" class="waves-effect">연락처 및 오시는 길</a></li>
+    </ul>
+
+    <header id="header">
+      <h1>{% if page.id == notice %}공지사항{% else %}{{ page.title }}{% endif %}</h1>
+    </header>
+
+    <div id="content">
+      {{ content }}
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $("a[data-activates=menu]").sideNav({
+          edge: "right",
+          draggable: true,
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,39 @@
+---
+title: 공지사항
+id: notice
+layout: default
+---
+
+{% for post in paginator.posts %}
+  <div class="post">
+    <h1><a href="{{ post.url }}">{{ post.title }}</a></h1>
+    <p class="date">
+      {{ post.date | date: "%Y-%m-%d" }}
+    </p>
+  </div>
+{% endfor %}
+
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="previous">
+      <i class="material-icons">navigation before</i>
+    </a>
+  {% else %}
+    <span class="previous">
+      <i class="material-icons">navigate_before</i>
+    </span>
+  {% endif %}
+
+  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="next">
+      <i class="material-icons">navigate_next</i>
+    </a>
+  {% else %}
+    <span class="next">
+      <i class="material-icons">navigate_next</i>
+    </span>
+  {% endif %}
+</div>
+
