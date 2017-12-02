@@ -23,6 +23,7 @@ baseurl: "/sj" # the subpath of your site, e.g. /blog
 url: "http://juneoh.com" # the base hostname & protocol for your site, e.g. http://example.com
 paginate: 5
 paginate_path: "notice/page:num/"
+permalink: /notice/:title
 
 # Build settings
 markdown: kramdown
