@@ -112,7 +112,7 @@ dd {
 }
 
 #page-index .slide-wrapper {
-  padding: 64px;
+  margin: 128px 64px 64px;
 }
 
 #page-index .fp-controlArrow {
@@ -153,9 +153,40 @@ dd {
   border-style: solid;
 }
 
+/*
+ * page-info
+ */
+
+#page-info h2 {
+  margin: 3rem 0 1.5rem -20px;
+  padding: 0 0 0.2rem 16px;
+  border-left: 4px solid #3a70b0;
+}
+#page-info h3 {
+  margin: 1.5rem 0;
+  font-weight: 400;
+}
+#page-info th,
+#page-info td {
+  border: 1px solid #d0d0d0;
+}
+
+/*
+ * page-contact
+ */
+
 #page-contact #content {
   max-width: 600px;
   margin: 0 auto;
+}
+
+#page-contact table {
+  margin: 1rem 0;
+}
+
+#page-contact th,
+#page-contact td {
+  padding: 0.3rem;
 }
 
 #contact-map {
@@ -199,3 +230,68 @@ dd {
   padding-left: 10px;
   vertical-align: middle;
 }
+
+/*
+ * page-notice
+ */
+
+#page-notice #content {
+ 	text-align: center;
+}
+
+#page-notice #content table {
+  text-align: left;
+}
+
+#page-notice h2 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#page-notice td.title {
+  width: 100%;
+}
+
+#page-notice td.date {
+  white-space: nowrap;
+  color: #999;
+	font-size: 1rem;
+}
+
+#page-notice #content ul.pagination {
+  display: inline-block;
+	width: auto;
+  margin: 1.5rem auto;
+}
+
+#page-notice #content ul.pagination li.active {
+  background-color: #3a70b0;
+}
+
+/*
+ * page-post
+ */
+
+#page-post #content h1 {
+  margin: 3rem 0 1rem -20px;
+  padding: 0 0 0.2rem 16px;
+  border-left: 4px solid #3a70b0;
+  font-size: 1.6rem
+}
+
+#page-post #content p.date {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d0d0d0;
+  color: #999;
+  font-size: 1rem;
+}
+
+#page-post #content p.button {
+  padding: 3rem 0;
+  text-align: center;
+}
+
+#page-post #content .btn-large {
+  background-color: #3a70b0;
+}
+

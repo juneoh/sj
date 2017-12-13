@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<h1>{{ page.title }}</h1>
+
+<p class="date">{{ page.date | date: "%Y년 %m월 %d일" }}</p>
+
+{{ page.content }}
+
+<p class="button">
+  <a href="{{ site.baseurl }}/notice" class="waves-effect waves-light btn-large">
+    <i class="material-icons left">chevron_left</i>목록으로
+  </a>
+</p>

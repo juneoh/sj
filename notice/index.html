@@ -4,36 +4,72 @@ id: notice
 layout: default
 ---
 
-{% for post in paginator.posts %}
-  <div class="post">
-    <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-    <p class="date">
-      {{ post.date | date: "%Y-%m-%d" }}
-    </p>
-  </div>
-{% endfor %}
+<table>
+  <thead>
+    <th>제목</th>
+    <th>날짜</th>
+  </thead>
+  <tbody>
+    {% for post in paginator.posts %}
+    <tr>
+      <td class="title">
+        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+      </td>
+      <td class="date">
+        {{ post.date | date: "%Y년 %m월 %d일" }}
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 
-<div class="pagination">
+<ul class="pagination">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous">
-      <i class="material-icons">navigation before</i>
-    </a>
+	<li class="waves-effect">
+    <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+			<i class="material-icons">chevron_left</i>
+		</a>
+	</li>
   {% else %}
-    <span class="previous">
-      <i class="material-icons">navigate_before</i>
-    </span>
+	<li class="disabled">
+		<a>
+			<i class="material-icons">chevron_left</i>
+		</a>
+ 	</li>
   {% endif %}
 
-  <span class="page_number ">{{ paginator.page }} / {{ paginator.total_pages }}</span>
+  {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+		<li class="active">
+			<a>{{ page }}</a>
+		</li>
+    {% elsif page == 1 %}
+		<li class="waves-effect">
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+				{{ page }}
+      </a>
+		</li>
+    {% else %}
+		<li class="waves-effect">
+      <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">
+				{{ page }}
+	    </a>
+		</li>
+    {% endif %}
+  {% endfor %}
 
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next">
-      <i class="material-icons">navigate_next</i>
-    </a>
+	<li class="waves-effect">
+    <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">
+			<i class="material-icons">chevron_right</i>
+		</a>
+	</li>
   {% else %}
-    <span class="next">
-      <i class="material-icons">navigate_next</i>
-    </span>
+ 	<li class="disabled">
+    <a>
+			<i class="material-icons">chevron_right</i>
+		</a>
+	</li>
   {% endif %}
-</div>
+</ul>
 

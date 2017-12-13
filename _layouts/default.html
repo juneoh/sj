@@ -16,7 +16,7 @@
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   </head>
-  <body id="page-{{ page.id }}">
+  <body id="page-{% if page.layout == 'post' %}post{% else %}{{ page.id }}{% endif %}">
 
     <div id="navbar">
       <nav>
@@ -39,7 +39,7 @@
     </ul>
 
     <header id="header">
-      <h1>{% if page.id == notice %}공지사항{% else %}{{ page.title }}{% endif %}</h1>
+      <h1>{% if page.layout == 'post' %}공지사항{% else %}{{ page.title }}{% endif %}</h1>
     </header>
 
     <div id="content">
