@@ -169,6 +169,7 @@ dd {
 #page-info th,
 #page-info td {
   border: 1px solid #d0d0d0;
+  padding-left: 15px;
 }
 
 /*
