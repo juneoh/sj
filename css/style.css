@@ -81,6 +81,7 @@ dd {
 #content {
   width: 90%;
   margin: 0 auto;
+  padding-bottom: 3rem;
 }
 
 #page-index #header {
@@ -91,6 +92,7 @@ dd {
   width: 100%;
   margin: 0;
   padding-top: 0;
+  padding-bottom: 0;
   color: white;
   font-size: 1.2rem;
   text-align: center;
@@ -106,9 +108,12 @@ dd {
   font-weight: 600;
 }
 
-#page-index .section {
+#page-index div.section {
   padding: 0;
   background-color: #3a70b0;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #page-index .slide-wrapper {
@@ -135,10 +140,6 @@ dd {
 
 #banner {
   color: #fff;
-  background-attachment: fixed;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 #banner h1 {
@@ -162,10 +163,16 @@ dd {
   padding: 0 0 0.2rem 16px;
   border-left: 4px solid #3a70b0;
 }
+
 #page-info h3 {
   margin: 1.5rem 0;
   font-weight: 400;
 }
+
+#page-info #content img {
+  max-width: 100%;
+}
+
 #page-info th,
 #page-info td {
   border: 1px solid #d0d0d0;
