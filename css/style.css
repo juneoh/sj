@@ -122,7 +122,7 @@ dd {
 
 #page-index .slide-wrapper p {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 2rem auto;
 }
 
 #page-index .slide-wrapper .circle {
@@ -134,14 +134,14 @@ dd {
 }
 
 #page-index .fp-controlArrow.fp-next::after {
-  content: '\E001';
+  content: '>';
   margin-left: -40px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 50px;
 }
 
 #page-index .fp-controlArrow.fp-prev::before {
-  content: '\E000';
+  content: '<';
   margin-left: 1px;
   color: rgba(255, 255, 255, 0.8);
   font-size: 50px;
