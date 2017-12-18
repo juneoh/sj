@@ -122,6 +122,7 @@ dd {
 
 #page-index .slide-wrapper p {
   max-width: 600px;
+  margin: 0 auto;
 }
 
 #page-index .slide-wrapper .circle {
