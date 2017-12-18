@@ -122,11 +122,12 @@ dd {
 
 #page-index .slide-wrapper p {
   max-width: 600px;
-  margin: 2rem auto;
+  margin: 1rem auto;
 }
 
-#page-index .slide-wrapper .circle {
+#page-index .slide-wrapper img {
   max-width: 200px;
+  max-height: 200px;
 }
 
 #page-index .fp-controlArrow {
