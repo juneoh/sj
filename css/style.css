@@ -120,6 +120,14 @@ dd {
   margin: 128px 64px 64px;
 }
 
+#page-index .slide-wrapper p {
+  max-width: 600px;
+}
+
+#page-index .slide-wrapper .circle {
+  max-width: 200px;
+}
+
 #page-index .fp-controlArrow {
   border-width: 0;
 }
